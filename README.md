@@ -1,5 +1,5 @@
 # Gen9ダメージ計算API
-ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利用したダメージ計算APIです。
+ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc) を利用したダメージ計算APIです。
 自作ツールへのShowDownダメージ計算機能の導入検討など試験用にご利用ください。
 
 # 利用方法
