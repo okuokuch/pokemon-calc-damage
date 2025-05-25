@@ -9,23 +9,11 @@ export async function POST(request) {
   const gen = gens.get(9);
   const result = await calculate(
     gen,
-    new Pokemon(gen, attacker.name, 
-        {
-            level:attacker.level,
-            ability:attacker.ability,
-            evs:{atk:attacker.evs.atk}
-        }
-    ),
-    new Pokemon(gen, defender.name,
-        {
-            level:defender.level,
-            ability:defender.ability
-        }
-    ),
-    new Move(gen, move.name),
-    new Field({weather:field.weather})
+    new Pokemon(gen, attacker.name, attacker.options),
+    new Pokemon(gen, defender.name, defender.options),
+    new Move(gen, move.name, move.options),
+    new Field(field)
   )
   console.log(result)
-
   return NextResponse.json({ damage:result.damage,status: "200" });
 }
