@@ -161,3 +161,6 @@ https://github.com/pkmn/ps/tree/main/dex/data
 
 # その他
 このAPIはVercelの無料枠を利用して公開しております。APIリクエスト頻度が多い場合は、公開を停止いたします。
+
+# ライセンス
+このパッケージは MIT ライセンスの条件の下で配布されています。
