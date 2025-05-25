@@ -2,6 +2,12 @@
 ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利用したダメージ計算APIです。
 自作ツールへのShowDownダメージ計算機能の導入検討など試験用にご利用ください。
 
+# 利用方法
+下記API仕様に従い、POSTリクエストを送信してください。  
+JSON形式で、ダメージ計算結果をレスポンスします。  
+※ブラウザ上でダメージ計算をするツールではありません。  
+レスポンス欄に記載しているように、CLIコマンドでの入力結果から、ダメージ計算をレスポンスするのみです。
+
 # API仕様
 ## エンドポイント
 - URL：https://pokemon-calc-damage.vercel.app/api/calcDamage
@@ -147,7 +153,7 @@ JSON形式で最小~最大のダメージを配列で出力します。
 ![alt text](public/image.png)
 
 # 参考資料
-入力に用いる値は下記に記載があります。
+入力に用いる値は下記に記載があります。(ポケモン名、アイテム名、タイプ名、フィールド名etc.)
 https://github.com/pkmn/ps/tree/main/dex/data
 
 # 今後の回収予定
