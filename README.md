@@ -9,7 +9,7 @@ ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利
 ## リクエスト
 - ヘッダー：不要
 - ボディ：以下のJSON形式  
-　必須項目は以下3点
+　必須項目は以下3点です。それ以外はnullまたは項目自体削除しても問題ありません。
   - attacker > name
   - defender > name
   - move > name  
@@ -120,7 +120,35 @@ ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利
 }
 ```
 ## レスポンス
-最小~最大のダメージを配列で出力します。
+JSON形式で最小~最大のダメージを配列で出力します。
+```JSON
+{
+  "damage": [
+    252,
+    255,
+    258,
+    261,
+    264,
+    267,
+    270,
+    273,
+    276,
+    279,
+    282,
+    285,
+    288,
+    291,
+    294,
+    297
+  ],
+  "status": "200"
+}
+```
+![alt text](public/image.png)
+
+# 参考資料
+入力に用いる値は下記に記載があります。
+https://github.com/pkmn/ps/tree/main/dex/data
 
 # 今後の回収予定
 - 日本語対応verのAPI作成
