@@ -1,33 +1,15 @@
-# Gen9ダメージ計算API
-ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利用したダメージ計算APIです。
-自作ツールへのShowDownダメージ計算機能の導入検討など試験用にご利用ください。
-
-# API仕様
-## エンドポイント
-- URL：https://pokemon-calc-damage.vercel.app/api/calcDamage
-- メソッド：POST
-## リクエスト
-- ヘッダー：不要
-- ボディ：以下のJSON形式  
-　必須項目は以下3点
-  - attacker > name
-  - defender > name
-  - move > name  
-  デフォルトではレベル100となります。  "level":50はご記入下さい。
-
-晴れ下A252コライドン(やけど状態)の炎テラスフレアドライブ > 耐久無振りハバタクカミへのダメージ計算
-```json
 {
   "attacker":{
     "name":"koraidon",
     "options": {
       "level": 50,
       "ability": "Orichalcum Pulse",
-      "abilityOn": null,
+      "abilityOn": false,
       "item": "",
       "teraType": "Fire",
       "nature": "Serious",
-      "boostedStat": null,
+      "isSaltCure": false,
+      "boostedStat": "atk",
       "ivs": {
         "hp": 31,
         "atk": 31,
@@ -38,7 +20,7 @@ ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利
       },
       "evs": {
         "hp": 0,
-        "atk": 252,
+        "atk": 0,
         "def": 0,
         "spa": 0,
         "spd": 0,
@@ -56,15 +38,16 @@ ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利
     }
   },
   "defender":{
-    "name":"fluttermane",
+    "name":"miraidon",
     "options": {
       "level": 50,
       "ability": null,
       "abilityOn": false,
       "item": "",
-      "teraType": null,
+      "teraType": "Fire",
       "nature": "Serious",
-      "boostedStat": "spe",
+      "isSaltCure": false,
+      "boostedStat": "atk",
       "ivs": {
         "hp": 31,
         "atk": 31,
@@ -89,7 +72,7 @@ ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利
         "spd": 0,
         "spe": 0
       },
-      "status":null
+      "status":"brn"
     }
   },
   "move": {
@@ -118,12 +101,3 @@ ShowDownのダメージ計算機能(https://github.com/smogon/damage-calc)を利
     }
   }
 }
-```
-## レスポンス
-最小~最大のダメージを配列で出力します。
-
-# 今後の回収予定
-- 日本語対応verのAPI作成
-
-# その他
-このAPIはVercelの無料枠を利用して公開しております。APIリクエスト頻度が多い場合は、公開を停止いたします。
