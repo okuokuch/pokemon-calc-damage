@@ -1,0 +1,9 @@
+{
+  "move": {
+    "name": "flareblitz",
+    "options": {
+      "isCrit": true,
+      "isStellarFirstUse": false
+    }
+  }
+}

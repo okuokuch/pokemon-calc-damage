@@ -1,0 +1,20 @@
+{
+  "field": {
+    "weather": "Sun",
+    "terrain": "Electric",
+    "isMagicRoom": false,
+    "isWonderRoom": false,
+    "isGravity": false,
+    "attackerSide": {
+      "isTailwind": false,
+      "isHelpingHand": false,
+      "isBattery": false
+    },
+    "defenderSide": {
+      "isReflect": false,
+      "isLightScreen": false,
+      "isFlowerGift": false,
+      "isAuroraVeil": false
+    }
+  }
+}
