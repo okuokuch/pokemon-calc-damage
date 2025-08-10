@@ -1,19 +1,12 @@
 import { NextResponse } from "next/server";
-import { Dex } from "@pkmn/dex";
-import { Generations } from "@pkmn/data";
-import { calculate, Pokemon, Move, Field } from "@smogon/calc";
+import { calcDamageCore } from "./lib/calcDamageCore";
 
 export async function POST(request) {
-  const { attacker, defender, move, field} = await request.json();
-  const gens = new Generations(Dex);
-  const gen = gens.get(9);
-  const result = await calculate(
-    gen,
-    new Pokemon(gen, attacker.name, attacker.options),
-    new Pokemon(gen, defender.name, defender.options),
-    new Move(gen, move.name, move.options),
-    new Field(field)
-  )
-  console.log(result)
-  return NextResponse.json({ damage:result.damage,status: "200" });
+  try {
+    const payload = await request.json();
+    const result = await calcDamageCore(payload);
+    return NextResponse.json({ ...result, status: '200' ,});
+  } catch(e){
+    return NextResponse.json({ status: '400', error: String(e?.message || e) });
+  }
 }
