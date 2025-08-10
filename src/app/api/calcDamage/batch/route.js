@@ -44,7 +44,8 @@ export async function POST(request) {
       return {
         id,
         status: '200',
-        damage: s.value.result.damage
+        damage: s.value.result.damage,
+        defenderHP: s.value.result.defenderHP
       };
     } else {
       return {

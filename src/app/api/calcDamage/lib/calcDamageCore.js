@@ -13,5 +13,5 @@ export async function calcDamageCore(payload) {
     new Move(gen, move.name, move.options),
     new Field(field)
   )
-  return { damage:result.damage};
+  return { damage:result.damage, defenderHP:result.defender.originalCurHP};
 }
